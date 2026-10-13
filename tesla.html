@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="uk">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tesla Model S — Оренда авто Львів</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#f4f4f4;font-family:Arial,sans-serif;color:#111}
+.page{max-width:1180px;margin:auto;background:#fff;min-height:100vh}
+header{height:76px;padding:0 48px;display:flex;align-items:center;gap:40px;border-bottom:1px solid #eee}
+.logo{font-size:13px;font-weight:bold;white-space:nowrap}.logo a{color:#111;text-decoration:none}
+nav{display:flex;gap:30px;flex:1;justify-content:center}
+nav a{font-size:11px;color:#111;text-decoration:none}
+nav a:hover{color:#5736df}
+.phone{font-size:9px;white-space:nowrap}
+main{padding:45px 70px 55px;min-height:610px}
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;max-width:900px;margin:auto}
+.left h1{font-size:25px;margin:15px 0 5px}
+.price{font-size:18px;color:#5736df;font-weight:bold}
+.meta{font-size:10px;color:#777;margin-top:5px}
+.car-photo{height:250px;display:flex;align-items:center;justify-content:center;margin-top:20px}
+.car-photo img{max-width:100%;max-height:240px;object-fit:contain}
+.thumbs{display:flex;gap:8px}
+.thumb{width:55px;height:45px;border-radius:5px;background:#ddd;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover;filter:blur(2px)}
+.form-title{font-size:15px;font-weight:bold;margin:15px 0}
+label{font-size:10px;display:block;margin:10px 0 4px}
+input{width:100%;padding:11px;border:1px solid #e5e5e5;border-radius:5px}
+.btn{width:100%;border:0;border-radius:5px;background:#5736df;color:#fff;padding:11px;font-size:10px;font-weight:bold;cursor:pointer;margin-top:12px}
+.notice{font-size:8px;color:#777;line-height:1.4;margin-top:10px}
+.unavailable{text-align:center;padding-top:35px}
+.unavailable h1{font-size:17px;color:#777}
+.silhouette{height:220px;display:flex;align-items:center;justify-content:center}
+.silhouette div{width:240px;height:80px;background:#ccc;border-radius:50% 45% 20% 18%;position:relative}
+.silhouette div:after{content:"";position:absolute;width:145px;height:43px;background:#ccc;left:50px;top:-27px;border-radius:55% 55% 0 0}
+.unavailable p{font-size:10px;color:#777}
+footer{border-top:1px solid #eee;padding:28px 70px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:25px;font-size:9px;color:#555}
+footer b{display:block;color:#111;margin-bottom:8px}
+footer a{display:block;color:#555;text-decoration:none;margin:3px 0}
+.modal{display:none;position:fixed;inset:0;background:#0006;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}.box{background:#fff;width:400px;padding:28px;border-radius:9px;position:relative}
+.close{position:absolute;right:12px;top:8px;border:0;background:none;font-size:24px;cursor:pointer}
+.success{text-align:center;display:none}.success.show{display:block}
+@media(max-width:750px){
+header{padding:0 18px;gap:15px}nav{gap:12px}nav a{font-size:9px}.phone{display:none}
+main{padding:28px 18px}.detail{grid-template-columns:1fr;gap:20px}
+footer{grid-template-columns:1fr 1fr;padding:25px 18px}
+}
+</style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+<header>
+<div class="logo">🚗 <a href="index.html">Оренда авто Львів</a></div>
+<nav><a href="index.html">Головна</a><a href="cars.html">Автомобілі</a><a href="index.html">Орендувати зараз</a></nav>
+<div class="phone">☎ Потрібна допомога?<br><a href="tel:+380667221089" class="phone-link">+380(66)722-1089</a></div>
+</header>
+<main>
+<div class="detail">
+<section class="left">
+<h1>Tesla Model S</h1>
+<div class="price">1200 Грн <span class="meta">/доба</span></div>
+<div class="meta">Седан</div>
+<div class="car-photo"><img src="assets/tesla.png" alt="Tesla Model S"></div>
+<div class="thumbs">
+<div class="thumb"><img src="assets/tesla.png"></div>
+<div class="thumb"><img src="assets/tesla.png"></div>
+<div class="thumb"><img src="assets/tesla.png"></div>
+</div>
+</section>
+<section>
+<div class="form-title">Ваші Контактні Дані</div>
+<label>Ім'я</label><input id="name" placeholder="Ваше ім'я">
+<label>Прізвище</label><input id="surname" placeholder="Прізвище">
+<label>Номер Телефону</label><input id="phone" placeholder="+380...">
+<label>Термін Оренди</label><input id="days" type="number" min="1" value="1">
+<button class="btn" onclick="send()">Надіслати</button>
+<div class="notice">Натискаючи кнопку, ви погоджуєтесь на обробку даних для оформлення оренди автомобіля.</div>
+<div id="ok" class="success"><h3>Заявку прийнято!</h3><p>Ми зв'яжемося з вами для підтвердження.</p></div>
+</section>
+</div>
+</main>
+<footer>
+<div><b>🚗 Оренда авто</b>Комфортні й не дорогі авто<br>у Львові і Львівській області.</div>
+<div><b>📍 Адреса</b>Львів, вул. Городоцька, 26</div>
+<div><b>✉ Пошта</b>demyanchik@gmail.com</div>
+<div><b>Автомобілі</b><a href="cars.html">Седан</a><a href="cars.html">Універсал</a><a href="cars.html">Хетчбек</a><a href="cars.html">Джип</a></div>
+</footer></div>
+<script>
+function send(){
+ const n=document.getElementById('name').value.trim();
+ const p=document.getElementById('phone').value.trim();
+ if(!n||!p){alert("Заповніть ім'я та номер телефону.");return}
+ document.getElementById('ok').classList.add('show');
+}
+</script>
+</body></html>
