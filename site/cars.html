@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Автомобілі — Оренда авто Львів</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="site cars-site">
+
+<header class="header">
+
+    <a class="logo" href="index.html">
+        <span class="car-logo">🏎️</span>
+        <span>Оренда авто Львів</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Головна</a>
+
+        <a class="active" href="cars.html">
+            Автомобілі
+        </a>
+
+       <a href="cars.html">Орендувати зараз</a>
+    </nav>
+
+    <div class="help">
+        <span class="phone-round">☎</span>
+
+        <div>
+            <small>Потрібна допомога?</small>
+            <b><a href="tel:+380667221089" class="phone-link">+380(66)722-1089</a></b>
+        </div>
+    </div>
+
+</header>
+
+
+<main class="cars-main">
+
+    <h1>Вибрати автомобіль</h1>
+
+    <div class="all-cars">
+
+        <script>
+
+        const cars = [
+
+            /* =========================
+               VOLKSWAGEN JETTA
+               НЕДОСТУПНИЙ
+            ========================= */
+
+            {
+                image: 'assets/jetta.png',
+                name: 'Volkswagen Jetta',
+                price: '1000 Грн',
+                type: 'Седан',
+                gearbox: 'Автомат',
+                fuel: 'Бензин',
+                page: 'jetta.html',
+                available: false
+            },
+
+
+            /* =========================
+               BMW
+               ДОСТУПНИЙ
+            ========================= */
+
+            {
+                image: 'assets/bmw.png',
+                name: 'BMW F10 528i',
+                price: '800 Грн',
+                type: 'Седан',
+                gearbox: 'Автомат',
+                fuel: 'Дизель',
+                page: 'bmw.html',
+                available: true
+            },
+
+
+            /* =========================
+               AUDI
+               ДОСТУПНИЙ
+            ========================= */
+
+            {
+                image: 'assets/audi.png',
+                name: 'Audi A6 C6',
+                price: '700 Грн',
+                type: 'Універсал',
+                gearbox: 'Автомат',
+                fuel: 'Дизель',
+                page: 'audi.html',
+                available: true
+            },
+
+
+            /* =========================
+               TESLA
+               ДОСТУПНИЙ
+            ========================= */
+
+            {
+                image: 'assets/tesla.png',
+                name: 'Tesla Model S',
+                price: '1200 Грн',
+                type: 'Седан',
+                gearbox: 'Автомат',
+                fuel: 'Електро',
+                page: 'tesla.html',
+                available: true
+            },
+
+
+            /* =========================
+               TOYOTA
+               НЕДОСТУПНИЙ
+            ========================= */
+
+            {
+                image: 'assets/toyota.png',
+                name: 'Toyota Rav-4',
+                price: '1400 Грн',
+                type: 'Кросовер',
+                gearbox: 'Автомат',
+                fuel: 'Гібрид',
+                page: 'toyota.html',
+                available: false
+            },
+
+
+            /* =========================
+               SKODA
+               НЕДОСТУПНИЙ
+            ========================= */
+
+            {
+                image: 'assets/skoda.png',
+                name: 'Skoda Fabia',
+                price: '500 Грн',
+                type: 'Хетчбек',
+                gearbox: 'Механіка',
+                fuel: 'Газ/Бензин',
+                page: 'skoda.html',
+                available: false
+            }
+
+        ];
+
+
+        document.write(
+
+            cars.map(car => `
+
+                <article class="car-card full-card">
+
+                    <img
+                        src="${car.image}"
+                        alt="${car.name}"
+                    >
+
+
+                    <div class="car-row">
+
+                        <strong>
+                            ${car.name}
+                        </strong>
+
+                        <b>
+                            ${car.price}
+                        </b>
+
+                    </div>
+
+
+                    <div class="sub">
+
+                        <span>
+                            ${car.type}
+                        </span>
+
+                        <span>
+                            доба
+                        </span>
+
+                    </div>
+
+
+                    <div class="specs">
+
+                        <span>
+                            ♙ ${car.gearbox}
+                        </span>
+
+                        <span>
+                            ⛽ ${car.fuel}
+                        </span>
+
+                        <span>
+                            ❄ Кондиціонер
+                        </span>
+
+                    </div>
+
+
+                    ${
+                        car.available
+
+                        ?
+
+                        `
+                        <a
+                            class="rent"
+                            href="${car.page}"
+                        >
+                            Взяти в оренду
+                        </a>
+                        `
+
+                        :
+
+                        `
+                        <a
+                            class="rent"
+                            href="${car.page}"
+                        >
+                            Автомобіль недоступний
+                        </a>
+                        `
+                    }
+
+                </article>
+
+            `).join('')
+
+        );
+
+        </script>
+
+    </div>
+
+</main>
+
+
+<footer id="contact" class="footer">
+
+    <div class="footer-main">
+
+
+        <div class="footer-company">
+
+            <a class="logo" href="index.html">
+
+                <span class="car-logo">
+                    🏎️
+                </span>
+
+                <span>
+                    Оренда авто
+                </span>
+
+            </a>
+
+            <p>
+                Комфортні і не дорогі авто<br>
+                у Львові і Львівській<br>
+                області.
+            </p>
+
+        </div>
+
+
+        <div class="contact">
+
+            <h4>
+                <i>●</i> Адреса
+            </h4>
+
+            <a>
+                Львів, вул. Городоцька, 26
+            </a>
+
+        </div>
+
+
+        <div class="contact">
+
+            <h4>
+                <i>●</i> Пошта
+            </h4>
+
+            <a>
+                demyanchik@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="contact">
+
+            <h4>
+                <i>●</i> Телефон
+            </h4>
+
+            <a>
+                +380(66)722-1089
+            </a>
+
+        </div>
+
+    </div>
+
+
+   <div class="footer-links">
+
+    <div>
+        <b>Наші соціальні мережі</b>
+        <a href="https://www.instagram.com/demyan_drr" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/demyan_drr" target="_blank">Facebook</a>
+        <a href="https://www.youtube.com/@top3dstryi" target="_blank">Youtube</a>
+    </div>
+
+    <div>
+        <b>Автомобілі</b>
+        <a href="cars.html">Седан</a>
+        <a href="cars.html">Універсал</a>
+        <a href="cars.html">Хетчбек</a>
+        <a href="cars.html">Джип</a>
+    </div>
+
+</div>
+
+
+    <div class="copyright">
+
+        © Дрочак Дем’ян 2026. Львів
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+</html>
